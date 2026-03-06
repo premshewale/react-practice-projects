@@ -1,0 +1,114 @@
+<h3>Employee Details</h3>
+
+<br>
+<div *ngIf='flag; else noEmployee'>
+    <table border="2">
+        <tr>
+            <th>Sr.No</th>
+            <th>Employee Id</th>
+            <th>Employee Name</th>
+            <th>Salary</th>
+            <th>Company</th>
+            <th>Departmentt</th>
+            <th>Incentive</th>
+        </tr>
+        <tr *ngFor="let person of objArr; let i=index;let o=odd;let e=even;" [ngClass]="{oddrows:o,evenrows:e}">
+            <td>{{i+1}}</td>
+            <td>{{person.empId }}</td>
+            <td>{{person.empName |titlecase}}</td>
+            <td>{{person.salary| currency:'INR' }}</td>
+            <td>{{person.company |titlecase}}</td>
+           <td>{{person.dept}}</td>
+           <td>{{person.salary| incentives | currency:'INR' }}</td>
+         </tr>
+    </table>
+  </div>
+
+
+<ng-template #noEmployee>
+    <div>Else Block:  Employee is not in company  !!!! </div>
+ </ng-template>
+
+ <br>
+ <br>
+<select (change)="Department($event)">
+  
+  <option value="all">All Departments</option>
+  <option *ngFor="let department of getDepartments()" [value]="department">{{ department }}</option>
+</select>
+<br>
+<div *ngIf="flag1">
+  <table border="2">
+    <tr>
+      <th>Sr.No</th>
+      <th>Employee Id</th>
+      <th>Employee Name</th>
+      <th>Salary</th>
+      <th>Company</th>
+      <th>Department</th>
+      <th>Incentive</th>
+    </tr>
+    <tr *ngFor="let person of Employees; let i=index; let o=odd; let e=even;" [ngClass]="{oddrows:o,evenrows:e}">
+      <td>{{ i+1 }}</td>
+      <td>{{ person.empId }}</td>
+      <td>{{ person.empName | titlecase }}</td>
+      <td>{{ person.salary | currency:'INR' }}</td>
+      <td>{{ person.company | titlecase }}</td>
+      <td>{{ person.dept }}</td>
+      <td>{{ person.salary |sqrt| currency:'INR'  }}</td>
+    </tr>
+  </table>
+</div>
+
+<br>
+
+ 
+<h2>Employee Details</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Department</th>
+      <th>City</th>
+      <th>Company</th>
+      <th>link</th>
+        </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of objArr">
+      <td>{{ employee.dept }}</td>
+      <td>{{ employee.city }}</td>
+      <td>{{ employee.company }}</td>
+      <td>
+        <a href="#" (click)="showEmployeeDetails(employee)">Details</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3> Display Employee Details </h3>
+<div *ngIf="flag2">
+  <table border="2">
+    <tr>
+      <th>Sr.No</th>
+      <th>Employee Id</th>
+      <th>Employee Name</th>
+      <th>Salary</th>
+      <th>Company</th>
+      <th>Department</th>
+      <th>Incentive</th>
+    </tr>
+    <tr *ngFor="let person of selectedEmployee; let i=index; let o=odd; let e=even;" [ngClass]="{oddrows:o,evenrows:e}">
+      <td>{{ i+1 }}</td>
+      <td>{{ person.empId }}</td>
+      <td>{{ person.empName | titlecase }}</td>
+      <td>{{ person.salary | currency:'INR' }}</td>
+      <td>{{ person.company | titlecase }}</td>
+      <td>{{ person.dept }}</td>
+      <td>{{ person.salary |sqrt| currency:'INR'  }}</td>
+    </tr>
+  </table>
+</div>
+
+
+ 

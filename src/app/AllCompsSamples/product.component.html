@@ -1,0 +1,37 @@
+<h3>Product Details</h3>
+<!-- <div>
+    <fieldset style="height:140px;width:170px;">
+        <legend>Product details</legend>
+        <p>
+            Product Code - {{obj.productCode}} <br>
+            Product Name - {{obj.productName}} <br>
+            Product Price - {{obj.price}} <br>
+            Product Company - {{obj.company}} <br>
+        
+        </p>
+    </fieldset>
+</div> -->
+<br>
+<div *ngIf='flag; else noproducts'>
+    <table border="1">
+        <tr>
+            <th>Sr.No</th>
+            <th>Code</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Company</th>
+        </tr>
+        <tr *ngFor="let item of objArr; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{item.productCode}}</td>
+            <td>{{item.productName}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.company}}</td>
+         </tr>
+    </table>
+  </div>
+
+<ng-template #noproducts>
+    <div>Else Block:  Products unavailable in stock  !!!! </div>
+ </ng-template>
+
