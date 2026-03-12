@@ -1,0 +1,83 @@
+<h3> databinding demo</h3>
+<h4>Property Binding- One way Element Property Binding</h4>
+ <!-- <img src=".....">  -->
+ <!-- Logo: <img [src]="website.logo"/><br/>
+<br/>Logo: <img bind-src="website.logo"/>
+<br/>Logo: <img src="{{website.logo}}"/><br/>  -->
+
+
+
+<!-- <h3>Examples below are the various ways of one way data binding</h3>
+<p>Binding Built-in value attrbute of textbox using sqauer brackets</p>
+<input type="text" name="somename" [value]="website.name"/><br/>
+ {{website.name}}  
+ <p>Binding Built-in attrbute value of textbox using bind as a prefix</p>
+<input type="text" name="somename" bind-value="website.name"/> 
+<p>data binding value attribute using interpolation interpolation</p>
+<input type="text" name="somename" value="{{website.name}}"/><br/>
+<p>data binding value attribute using ng model angualr directive</p>
+ using ngModel 
+<input type="text" name="xyz" [ngModel]="website.name">
+
+<p>Current Value---{{website.name}}</p>   -->
+
+
+
+
+
+<!-- Two way databidnign -->
+two way----<input type="text" name="firstname" [(ngModel)]="mCompany"/> <br/>
+    <p>so you see the current value in the variable   {{mCompany}}</p>
+    <br/>
+
+    <!-- Style binding syntax -->
+    <p>Now observe Directive Property Biinding</p>
+    <p [ngClass]="'one two'"> 
+        Angular Directive Property Binding Example </p>
+    
+    <p bind-ngClass="'one two'">
+         Angular Directive Property Binding Example </p>
+    
+    <p ngClass="{{'one two'}}"> 
+        Angular Directive Property Binding Example </p>  
+
+
+
+
+
+
+
+
+
+    <!-- Url: <a [href]="website.url" [textContent]="website.name"> </a>
+    <br/> -->
+    <!-- <br/>Url: <a bind-href="website.url" bind-textContent="website.name"> </a>
+    
+    <br/>Url: <a href="{{website.url}}" textContent="{{website.name}}"> </a>
+    
+    <p [textContent]="website.description"> </p>
+    
+    <p bind-textContent="website.description"> </p>
+    
+    <p textContent="{{website.description}}"> </p> 
+    
+    <br/><button [disabled]="flag">Submit</button>
+    
+    <br/><button bind-disabled="!flag">Submit</button><br> -->
+    
+    
+    
+     
+      
+    
+     <!-- <p>Two way data binding examples</p>
+     <input type="text" name="CompanyName" [value]="mCompany"/><br>
+     here is original value from componenet -{{mCompany}} <br/><br><br>
+     <input type="text" name="CName" bind-value="mCompany"/><br>
+    <input type="text" name="CoName" value={{mCompany}}/><br>-->
+    <!--Onw-way data binding<input type="text" name="CoName" [ngModel]=mCompany/><br><br> 
+    here is original value from componenetusing ngmodel  -{{mCompany}} <br/><br><br>
+    Two-way data bining <br><br> -->
+    <!-- <input type="text" name="CoName" [(ngModel)]=tech/><br>
+    <p>most current value   --- {{tech}}</p> -->
+    
