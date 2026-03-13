@@ -1,0 +1,20 @@
+<h3>Passing inputs to event handlers</h3>
+<p>Working with template reference variables</p>
+
+<div>
+    <p>First Name :<input type="text" id="txtfnm" #fnm ></p>
+    <p>Last Name :<input type="text" id="txtlnm" #lnm ></p>
+    <button (click)="displayDetails(fnm.value,lnm.value)">Display</button>
+    <p>{{result}}</p>
+</div>
+
+<div>
+    Select Sports:
+    <select Name="AllCourses" #mycourse (change)="dispalyCourse(mycourse.value)">
+  <option>---Select Course----</option>
+    <option *ngFor="let sp of Courses" [value]="sp">
+		  {{ sp}}
+	</option>
+  </select>
+  <p *ngIf="show">{{newresult}}</p>  
+</div>
