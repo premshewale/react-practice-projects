@@ -1,0 +1,16 @@
+<p>demo-two-events works!</p>
+<h3>Registration for Angular</h3>
+<div>
+<p>First Name -<input type="text" id="txtfnm" #fnm></p>
+<p>last Name -<input type="text" id="txtlnm" #lmn></p>
+
+<button (click)="displayDetails(fnm.value,lmn.value)">Register Here </button>
+<p>{{result}}</p>
+</div>
+Select Sports : 
+    <select Name="AllCourses" #mycourse (change)="displayCourse (mycourse.value)">
+        <option>---Select Course---</option>
+        <option *ngFor ="let sp of Courses" [value]="sp"> {{ sp}}</option>
+
+    </select>
+    <p *ngIf="show">{{newresult}}</p>
