@@ -1,0 +1,46 @@
+<h2>Customer details form -Model driven form or reactive form</h2>
+<div class="container">
+    <h1>Angular  Reactive Form Validation Example - BY SP</h1>
+    <form [formGroup]="formDetails" (ngSubmit)="submit()">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input 
+                formControlName="name"
+                id="name" 
+                type="text" >
+            <div *ngIf="f.name?.touched && f.name?.invalid">
+                <div *ngIf="f.name.errors?.['required']">Name is required.</div>
+                <div *ngIf="f.name.errors?.['minlength']">Name should be 3 character.</div>
+            </div>
+        </div>
+       <br>  <br>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input 
+                formControlName="email"
+                id="email" 
+                type="text" >
+            <div *ngIf="f.email?.touched && f.email?.invalid" >
+                <div *ngIf="f.email.errors?.['required']">Email is required.</div>
+                <div *ngIf="f.email.errors?.['email']">Please, enter valid email address.</div>
+            </div>
+        </div>
+        <br>  <br>
+        <div class="form-group">
+            <label for="body">Body</label>
+            <textarea 
+                formControlName="body"
+                id="body" 
+                type="text" 
+                class="form-control">
+            </textarea>
+            <div *ngIf="f.body?.touched && f.body?.invalid" class="alert alert-danger">
+                <div *ngIf="f.body.errors?.['required']">Body is required.</div>
+                
+            </div>
+        </div>
+        <br>  <br>
+        <button  type="submit" [disabled]="!formDetails.valid">Submit</button>
+    </form>
+</div>
+<p>{{res}}</p>

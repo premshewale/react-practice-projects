@@ -1,0 +1,68 @@
+<h3>customer Details-template Driven Form</h3>
+
+<form #contactForm="ngForm" (ngSubmit)="log(contactForm)" >
+
+    <div>
+        <br/><br/>
+        <div>
+            &nbsp; &nbsp;<label style="margin: 5px 0 22px 0;" for="firstname">First Name</label>
+            <input type="text" style="margin:auto" name="firstname" ngModel #firstname="ngModel" required minlength="3" >
+        </div>
+        <div style="color:red" *ngIf="!firstname?.valid && (firstname?.dirty ||firstname?.touched)" class="alert alert-danger">
+            <div [hidden]="!firstname.errors?.['required']">
+                First Name is required
+            </div>
+            <div [hidden]="!firstname.errors?.['minlength']">
+                First Name Minimum Length is {{firstname.errors?.['minlength'].requiredLength}}
+            </div>
+        </div>
+        <div>
+            &nbsp; &nbsp;<label style="margin: 5px 10 25px 0;" for="lastname">Last Name</label>
+            <input type="text"   name="lastname" ngModel #lastname="ngModel"  required  maxlength="6">
+            <div style="color:blue" *ngIf="!lastname?.valid && (lastname?.dirty ||lastname?.touched)">
+                <div [hidden]="!lastname.errors?.['required']">
+                    Last Name is required
+                </div>
+                <div [hidden]="!lastname.errors?.['maxlength']">
+                    Last Name Max length  can be {{lastname.errors?.['maxlength'].requiredLength}}
+                </div>
+            </div>
+       </div>
+        <div ngModelGroup="address">
+            <div>
+                <label style="margin-left: 50px" for="city">City</label>
+                <input type="text"   name="city" ngModel #city="ngModel" required>
+                <div *ngIf="!city?.valid && (city?.dirty ||city?.touched)" >
+                    <div [hidden]="!city.errors?.['required']">
+                           City Name is required
+                    </div>
+                </div>
+           </div>
+    
+            <div>
+                <label style="margin-left: 40px;" for="street">Street</label>
+                <input type="text" class="form-control"   name="street"  ngModel #street="ngModel" >
+            </div>
+    
+            <div>
+                <label style="margin-left: 20px;" for="pincode">Pin Code</label>
+                <input type="text"  name="pincode" ngModel #pincode="ngModel"
+                  required pattern="[0-9]{5}">
+            </div>
+             <div style="color:red" *ngIf="!pincode?.valid && (pincode?.dirty ||pincode?.touched)" >
+                <div [hidden]="!pincode?.errors">
+                    Enter a valid pattern as : Pincode can be 5 digits only
+                </div>
+            </div>
+        </div>
+    
+       <br/>
+            <button style="margin-left: 150px;" type="submit" [disabled]="!contactForm.valid">Submit</button>
+            <br/>
+            <br/>
+    
+    </div>
+
+</form>
+<br/>
+<pre>{{contactForm.value | json }} </pre>
