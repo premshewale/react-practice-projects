@@ -1,0 +1,37 @@
+<p>collapsible-panel works!</p>
+<div class="panel">
+    <div class="panel-header" (click)="togglePanel(1)">
+      Panel 1
+      <span class="toggle-icon" [ngClass]="{'open':panel1}"></span>  
+    </div>
+    <div class="panel-content"  [ngClass]="{'open':panel1}">
+      Angular is a popular open-source web application framework developed by Google and a community of developers. It's designed to build dynamic and single-page web applications (SPAs). Here's an overview of some key concepts and features of Angular:
+      Component-Based
+       Architecture:Angular applications are built using a component-based architecture. Components are the fundamental building blocks of an Angular app. Each component represents a part of the user interface and encapsulates its logic and view.
+    </div>
+  </div>
+  
+  <div class="panel">
+    <div class="panel-header" (click)="togglePanel(2)">
+      Panel 2
+      <span class="toggle-icon" [ngClass]="{'open':panel2}"></span>
+    </div>
+    <div class="panel-content" [ngClass]="{'open':panel2}">
+      Templates:      Angular uses HTML templates to define the user interface. These templates can include Angular-specific syntax for data binding, loops, conditionals, and more.
+      Data Binding:   Angular provides powerful two-way data binding, allowing you to easily synchronize data between the model (component) and the view (template). Changes in one automatically update the other.
+      Directives:     Directives are markers in the DOM that tell Angular to attach specific behavior to an element or transform the DOM. Examples include ngIf for conditional rendering and ngFor for looping.
+    </div>
+  </div>
+  
+  <div class="panel">
+    <div class="panel-header" (click)="togglePanel(3)">
+      Panel 3
+      <span class="toggle-icon" [class.open]="panel3"></span>
+    </div>
+    <div class="panel-content" [class.open]="panel3">
+      Services:Services in Angular are responsible for providing shared functionality, such as data retrieval, authentication, or any business logic. They are typically injected into components.
+Dependency Injection:Angular has its own built-in dependency injection system. This allows you to manage the dependencies of your components and services easily.
+Routing:Angular provides a powerful routing mechanism that allows you to create SPAs with multiple views and handle navigation
+    </div>
+  </div>
+  

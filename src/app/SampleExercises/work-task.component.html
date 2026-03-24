@@ -1,0 +1,18 @@
+<div>
+    Work Tasks: <input type="text" [(ngModel)]="task"> 
+    <button (click)="AddTask()">Add Task</button>&nbsp;<br><br>
+    
+    <br>
+    <div *ngIf='flag; else noTask'>
+        <div *ngFor="let task of taskArr; let i=index">
+            <p  (click)="toggleComplete(i)" [ngClass]>
+                {{i+1}} - {{task}}
+            </p>
+        </div>
+        <p class="tasks">Total Task: {{taskArr.length - count }}</p>
+    </div>
+    
+    <ng-template #noTask>
+        <div>Else Block: No Task !!!! </div>
+    </ng-template>
+</div>

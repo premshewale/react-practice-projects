@@ -1,0 +1,31 @@
+.panel {
+    border: 1px solid lightcoral;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  
+  .panel-header {
+    background-color: whitesmoke;
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .panel-content {
+    padding: 10px;
+    display: none;
+  }
+  
+  .toggle-icon::after {
+    content: '\25BC'; /* Down arrow icon */
+    float: right;
+  }
+  
+  .toggle-icon.open::after {
+    content: '\25B2'; /* Up arrow icon */
+  }
+  
+  .panel-content.open {
+    display: block;
+  }
+  

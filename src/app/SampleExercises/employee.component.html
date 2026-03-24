@@ -1,0 +1,84 @@
+<h1>Employee Details</h1>
+
+<table border="2">
+    <tr>
+        <th>Sr.No</th>
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Salary</th>
+        <th>Company</th>
+        <th>Departmentt</th>
+        <th>Incentive</th>
+    </tr>
+    <tr *ngFor="let person of objArr; let i=index;let o=odd;let e=even;" [ngClass]="{oddrows:o,evenrows:e}">
+        <td>{{i+1}}</td>
+        <td>{{person.empId }}</td>
+        <td>{{person.empName |titlecase}}</td>
+        <td>{{person.salary| currency:'INR' }}</td>
+        <td>{{person.company |titlecase}}</td>
+       <td>{{person.dept}}</td>
+       <td>{{person.salary| incentives | currency:'INR' }}</td>
+     </tr>
+</table><br><br>
+<div>
+    <select name="AllDepartments" #mydepartment (change)="displayDepartment(mydepartment.value)"
+     >
+        <option>---Select Department---</option>
+        <option *ngFor="let sp of departments" [value]="sp">{{sp}}</option>
+    </select>
+    <p *ngIf="show">{{newresult}}</p>
+</div><br>
+<div *ngIf="show">
+<table border="2">
+    <tr>
+        <th>Sr.No</th>
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Salary</th>
+        <th>Company</th>
+        <th>Departmentt</th>
+        <th>Incentive</th>
+    </tr>
+    <tr *ngFor="let info of resultantArr; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{info.empId }}</td>
+        <td>{{info.empName |titlecase}}</td>
+        <td>{{info.salary| currency:'INR' }}</td>
+        <td>{{info.company |titlecase}}</td>
+      
+       <td>{{info.salary| incentives | currency:'INR' }}</td>
+    </tr>
+</table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <tr *ngFor="let info of empobj; let i=index" [ngSwitch]="info.department">
+    
+    <td *ngSwitchCase="mydepartment.value">{{info.empId}}</td>
+    <td *ngSwitchCase="mydepartment.value">{{info.empName| titlecase}}</td>
+    <td *ngSwitchCase="mydepartment.value">{{info.salary| currency:'INR'}}</td>
+    <td *ngSwitchCase="mydepartment.value">{{info.department}}</td>
+   
+</tr> -->

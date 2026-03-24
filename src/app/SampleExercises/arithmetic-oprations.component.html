@@ -1,0 +1,14 @@
+<p>arithmetic-oprations works!</p>
+<div>
+Enter number: <input type="number" [(ngModel)]="num1"><br><br>
+Enter number: <input type="number" [(ngModel)]="num2"><br>
+<br>
+<button (click)="Addition()">Addition</button>&nbsp;
+<button (click)="Substraction()">Substraction</button>&nbsp;
+<button (click)="Mutiplication()">Mutiplication</button>&nbsp;
+<button (click)="Divison()">Divison</button>
+</div>
+
+<div *ngIf="flag">
+    <p>Result-- {{result}}</p>
+    </div>

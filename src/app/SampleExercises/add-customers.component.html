@@ -1,0 +1,36 @@
+<h2>Customer Details</h2>
+
+<div>
+  <label for="name">Name:</label>
+  <input type="text" id="name" [(ngModel)]="newCustomer.name">
+</div>
+
+<div>
+  <label for="email">Email:</label>
+  <input type="email" id="email" [(ngModel)]="newCustomer.email">
+</div>
+
+<div>
+  <label for="phone">Phone:</label>
+  <input type="tel" id="phone" [(ngModel)]="newCustomer.phone">
+</div>
+
+<button (click)="addCustomer()">Add Customer</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers">
+      <td>{{ customer.name }}</td>
+      <td>{{ customer.email }}</td>
+      <td>{{ customer.phone }}</td>
+    </tr>
+  </tbody>
+</table>
+
