@@ -1,0 +1,28 @@
+<p>test-pipes works!</p>
+<h4>String handling  Pipes</h4>
+<p>All in Capitals ----{{xyz|uppercase}}</p>
+<p>All in Lowercase ----{{xyz|lowercase}}</p>
+<p>All in Title Case ----{{xyz|titlecase}}</p>
+<h4>Use of date Pipe</h4>
+<p>Date Formatting </p>
+<p>Date - {{jd|date|uppercase}}</p>
+<p>Date with the format ----  {{jd | date:"dd/MM/yy"}}</p>
+<b>Date Fromat:</b> My joing Date is {{jd | date:"fullDate" | uppercase}}<br/>
+
+<h4>Currency Pipe</h4>
+
+    <b>Euro:</b> Price of laptop {{650 | currency: 'EUR':false}}<br/>
+    <b>US dollars:</b> Price of laptop {{750 | currency: 'USD':true}}<br/>
+    <b>Indian rs:</b> Price of laptop {{750 | currency: 'INR':true}}
+
+    <h4>JSON Pipe</h4>
+    <div>
+        <p>{{bookObj|json}}</p>
+    </div>
+
+      <h4>Number formatting Pipe</h4>
+      <div>
+        <p> {{12.345456 | number:'3.2-5'}} </p> 
+        <p> {{45.6752 | number:'3.2-5'}} </p> 
+        <p> {{6.345456 | number:'2.2-3'}} </p>
+      </div>
